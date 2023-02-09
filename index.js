@@ -28,6 +28,10 @@ app.get('/protected', passport.authenticate('jwt', { session: false }), (req, re
 });
 
 
+app.get('/', (req, res) => {
+  res.send('Hello World!'); 
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
