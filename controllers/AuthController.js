@@ -20,12 +20,12 @@ const register = async (req, res) => {
         email,
     });
 
-    user.save().then (user => {
+    user.save().then(user => {
         return res.status(200).json({ message: 'Registered successfully' });
     })
-    .catch(err => {
-        return res.status(400).json({ message: 'Registration failed' });
-    });
+        .catch(err => {
+            return res.status(400).json({ message: 'Registration failed' });
+        });
 };
 
 
@@ -51,7 +51,7 @@ const login = async (req, res) => {
         };
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });
-    
+
         return res.status(200).json({
             message: 'Logged in successfully',
             token: "Bearer " + token

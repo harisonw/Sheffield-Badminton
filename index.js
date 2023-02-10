@@ -14,7 +14,7 @@ app.use('/auth', AuthRouter);
 
 const db = process.env.MONGO_URI || 'mongodb://localhost:27017/Sheffield-Badminton';
 mongoose.set('strictQuery', false); // the `strictQuery` option will be switched back to `false` by default in Mongoose 7
-mongoose.connect(db);
+mongoose.connect(db , { useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(passport.initialize());
 
@@ -35,3 +35,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
+module.exports = app;
