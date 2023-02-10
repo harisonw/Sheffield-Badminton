@@ -24,7 +24,8 @@ services:
       - mongodb-data:/data/db
 
     # Uncomment to change startup options
-    # environment:
+    environment:
+      MONGO_URI: mongodb://db/Sheffield-Badminton
     #  MONGO_INITDB_ROOT_USERNAME: root
     #  MONGO_INITDB_ROOT_PASSWORD: example
     #  MONGO_INITDB_DATABASE: your-database-here
