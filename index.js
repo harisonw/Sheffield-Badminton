@@ -13,6 +13,7 @@ const AuthRouter = require('./routes/auth');
 app.use('/auth', AuthRouter);
 
 const db = process.env.MONGO_URI || 'mongodb://localhost:27017/Sheffield-Badminton';
+console.log(db);
 mongoose.set('strictQuery', false); // the `strictQuery` option will be switched back to `false` by default in Mongoose 7
 mongoose.connect(db , { useNewUrlParser: true, useUnifiedTopology: true});
 
